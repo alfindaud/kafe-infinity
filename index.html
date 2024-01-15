@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake & Bakery</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- my icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--my style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Cafe<span> Infinity</span>.</a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <!-- <a href="#direc">Pengurus Kami</a> -->
+        <a href="#menu">Menu</a>
+        <a href="#products">Pesan Online</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button"
+          ><i data-feather="shopping-cart"></i
+        ></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Search Form Start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <!-- Search Form end -->
+
+      <!-- shoping card start -->
+      <div class="shopping-cart">
+        <div class="cart-item" id="cart-item">
+          <img src="img/crop/menu/cromboloni.jpg" alt="Cromboloni" />
+          <div class="item-detail">
+            <h3>Cromboloni</h3>
+            <div class="item-price">IDR 20.000</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="img/crop/menu/Choco Banana nugget.jpg" alt="Banana Choco" />
+          <div class="item-detail">
+            <h3>Banana Choco</h3>
+            <div class="item-price">IDR 14.000</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="img/crop/menu/japanese roll.jpg" alt="japanese_roll" />
+          <div class="item-detail">
+            <h3>Japanese Roll</h3>
+            <div class="item-price">IDR 25.000</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+      </div>
+      <!-- shoping card end-->
+    </nav>
+    <!-- Navbar Finish -->
+
+    <!-- hero section start -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Mari Nikmati Cake And <span>Bakery</span></h1>
+        <p>
+          Menyajikan kue dan produk roti berkualitas tinggi dengan bahan
+          terbaik.
+        </p>
+        <a href="#about" class="cta">Tentang Kami</a>
+      </main>
+    </section>
+
+    <!-- hero section finish -->
+
+    <!-- About Section start -->
+    <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/logo infinity-Recovered6.jpg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa Memilih Restoran Kami?</h3>
+          <p>
+            Restoran kami menyajikan kue dan produk roti yang berkualitas tinggi
+            dengan bahan terbaik. Menciptakan variasi menu yang tak terbatas,
+            menggoda selera pelanggan. Menyediakan layanan pelanggan yang luar
+            biasa dan ramah. Mengutamakan keberlanjutan dengan praktik bisnis
+            yang bertanggung jawab terhadap lingkungan. Menjadi pusat inovasi
+            dalam dunia kue dan roti, terus menghadirkan kreasi baru.
+          </p>
+          <p>
+            Visi kami yaitu “Menjadikan “cake & bakery INFINITY ” Menjadi
+            destinasi utama bagi pecinta kue dan toko roti, menghadirkan
+            pengalaman tak terbatas melalui inovasi, kualitas terbaik, dan
+            kreativitas tanpa batas”.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- About Section end-->
+    <!-- menu awal -->
+
+    <!-- diretur start -->
+    <section id="direc" class="direc">
+      <h2>Meet Our <span>Team</span></h2>
+      <p>
+        Disini Kami Memiliki Beberapa Pengurus Restoran Yang Sangat Berjasa Bagi
+        Keberhasilan Restoran Kami
+      </p>
+
+      <div class="row">
+        <div class="direc-card">
+          <img
+            src="img/crop/papzol.jpg"
+            alt="Papa Zola"
+            class="direc-card-img"
+          />
+          <h3 class="direc-card-title">- CTO -</h3>
+          <p class="direc-card-price">Alfin Habsa Balubun</p>
+        </div>
+        <div class="direc-card">
+          <img
+            src="img/crop/mazil.jpg"
+            alt="Mama Zila"
+            class="direc-card-img"
+          />
+          <h3 class="direc-card-title">- CEO -</h3>
+          <p class="direc-card-price">Indah Juliana Sia</p>
+        </div>
+        <div class="direc-card">
+          <img
+            src="img/crop/mama indah1.jpg"
+            alt="Papa Zola"
+            class="direc-card-img"
+          />
+          <h3 class="direc-card-title">- PRODUCTION OFFICER -</h3>
+          <p class="direc-card-price">WA ITA</p>
+        </div>
+        <div class="direc-card">
+          <img src="img/crop/ayana1.jpg" alt="ayana" class="direc-card-img" />
+          <h3 class="direc-card-title">- MARKETTING OFFICER -</h3>
+          <p class="direc-card-price">RIYANA A UMAR</p>
+        </div>
+        <div class="direc-card">
+          <img
+            src="img/crop/ayana mama.jpg"
+            alt="Papa Zola"
+            class="direc-card-img"
+          />
+          <h3 class="direc-card-title">- FINANCIAL OFFICER -</h3>
+          <p class="direc-card-price">MURNI SAMPULAWA</p>
+        </div>
+      </div>
+    </section>
+    <!-- diretur end -->
+
+    <!-- menu section start -->
+    <section id="menu" class="menu">
+      <h2><span>Menu</span> Kami</h2>
+      <p>Disini Kami Menyediakan berbagai macam menu yaitu :</p>
+
+      <div class="row">
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/cromboloni.jpg"
+            alt="cromboloni"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Cromboloni -</h3>
+          <p class="menu-card-price">IDR 20.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/Choco Banana nugget.jpg"
+            alt="banana_choco"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Banana Choco -</h3>
+          <p class="menu-card-price">IDR 14.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/japanese roll.jpg"
+            alt="japanese_roll"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Japanese Roll -</h3>
+          <p class="menu-card-price">IDR 25.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/es karamel.jpg"
+            alt="Ice Caramel"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Ice Caramel -</h3>
+          <p class="menu-card-price">IDR 25.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/Hazelnut Choco.jpg"
+            alt="Hazelnut Choco"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Hazelnut Choco -</h3>
+          <p class="menu-card-price">IDR 25.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/Best Chocolate Cake Recipe _ My Baking Addiction.jpg"
+            alt="Chocolate Cake"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Chocolate Cake -</h3>
+          <p class="menu-card-price">IDR 22.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/Birthday Cake _ Purple Mirror Glaze Cake _ Entremet Cake Indonesia by Lincah Cakes.jpg"
+            alt="Birthday Cake"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Miror Glaze Cake -</h3>
+          <p class="menu-card-price">IDR 130.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/Korean cake.jpg"
+            alt="Korean Cake"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Korean Cake -</h3>
+          <p class="menu-card-price">IDR 110.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/classic mix signature cake.jpg"
+            alt="classic mix signature cake"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Classic Mix Signature Cake -</h3>
+          <p class="menu-card-price">IDR 250.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/black forest.jpg"
+            alt="black forest"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Black Forest -</h3>
+          <p class="menu-card-price">IDR 150.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/kids cake.jpg"
+            alt="kids cake"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Kids Cake -</h3>
+          <p class="menu-card-price">IDR 200.000</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/crop/menu/Frappe.jpg"
+            alt="Frappe"
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">- Frappe -</h3>
+          <p class="menu-card-price">IDR 25.000</p>
+        </div>
+      </div>
+    </section>
+    <!-- menu section end -->
+
+    <!-- product section start -->
+    <section class="products" id="products">
+      <h2><span>Pesanan</span> Online</h2>
+      <p>
+        Kami Juga Membuka Pelayanan Online Jika Anda ingin memesan dari rumah.
+        Kebetulan kami baru membuka Restorankami,kami mengadakan diskon
+        besar-besaran
+      </p>
+
+      <div class="row">
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/cromboloni.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Cromboloni</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 20.000 <span>IDR 25.000</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img
+              src="img/crop/menu/Choco Banana nugget.jpg"
+              alt="Banana Choco"
+            />
+          </div>
+          <div class="product-content">
+            <h3>Banana Choco</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 14.000 <span>IDR 20.000</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/japanese roll.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Japanese Roll</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 25.000 <span>IDR 28.000</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/es karamel.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Ice Caramel</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 25.000 <span>Discount</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/Hazelnut Choco.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Hazelnut Choco</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 25.000 <span>IDR 28.000</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img
+              src="img/crop/menu/Best Chocolate Cake Recipe _ My Baking Addiction.jpg"
+              alt="Cromboloni"
+            />
+          </div>
+          <div class="product-content">
+            <h3>Chocolate Cake</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 22.000 <span>IDR 25.000</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img
+              src="img/crop/menu/Birthday Cake _ Purple Mirror Glaze Cake _ Entremet Cake Indonesia by Lincah Cakes.jpg"
+              alt="Cromboloni"
+            />
+          </div>
+          <div class="product-content">
+            <h3>Miror Glaze Cake</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">
+              IDR 130.000 <span>IDR 150.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/Korean cake.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Korean Cake</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">
+              IDR 110.000 <span>IDR 130.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img
+              src="img/crop/menu/classic mix signature cake.jpg"
+              alt="Cromboloni"
+            />
+          </div>
+          <div class="product-content">
+            <h3>Classic Mix Signature Cake</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">
+              IDR 250.000 <span>IDR 255.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/black forest.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Black Forest</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">
+              IDR 150.000 <span>IDR 170.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/kids cake.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Kids Cake</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">
+              IDR 200.000 <span>IDR 250.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/crop/menu/Frappe.jpg" alt="Cromboloni" />
+          </div>
+          <div class="product-content">
+            <h3>Frappe</h3>
+            <div class="product-star">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 25.000 <span>IDR 28.000</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- product section end-->
+
+    <!-- Contact Section start -->
+    <section id="contact" class="contact">
+      <h2><span>Kontak</span> Kami</h2>
+      <p>
+        Kami Membuka Restoran ini tepat di dalam Maluku City Mall (MCM) lantai 3
+        kalau mau tau selengkapnya silahkan kunjungi instagram kami yaitu
+        <a href="#" class="ig">@infinity_cake_and_bakery</a> atau bisa lewat via
+        wa : 081294348808
+      </p>
+
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.6351120330983!2d128.1932453772776!3d-3.670262533323443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce9d32658efaf%3A0x2f29bf0afe09144e!2sMaluku%20City%20Mall%20(MCM)!5e0!3m2!1sid!2sid!4v1705173329838!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+
+        <form action="">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="nama" />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="email" />
+          </div>
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input type="text" placeholder="no hp" />
+          </div>
+          <button type="submit" class="btn">Kirim Pesanan Anda</button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section end -->
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="social">
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="phone-call"></i></a>
+        <a href="#"><i data-feather="hard-drive"></i></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="#">Alfin Daud</a>. | &copy; 2024</p>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
