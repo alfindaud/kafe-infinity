@@ -18,13 +18,22 @@ document.querySelector("#search-button").onclick = (e) => {
 };
 
 // toogle class active shoping cart
+// const shoppingCart = document.querySelector(".shopping-cart");
+// const cartItem = document.querySelector("#cart-item");
+
+// document.querySelector("#shopping-cart-button").onclick = (e) => {
+//   shoppingCart.classList.toggle("active");
+//   cartItem.focus();
+//   e.preventDefault();
+// };
+// toogle class active shopping cart
 const shoppingCart = document.querySelector(".shopping-cart");
 const cartItem = document.querySelector("#cart-item");
 
 document.querySelector("#shopping-cart-button").onclick = (e) => {
+  e.preventDefault(); // Prevent the default link behavior
   shoppingCart.classList.toggle("active");
   cartItem.focus();
-  e.preventDefault();
 };
 
 // klik diluar elemen

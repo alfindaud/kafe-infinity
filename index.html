@@ -18,11 +18,20 @@
 
     <!--my style -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- AlpineJS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- App -->
+    <script src="src/app.js" async></script>
   </head>
 
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">Cafe<span> Infinity</span>.</a>
 
       <div class="navbar-nav">
@@ -36,9 +45,14 @@
 
       <div class="navbar-extra">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart-button"
-          ><i data-feather="shopping-cart"></i
-        ></a>
+        <a href="#" id="shopping-cart-button">
+          <i data-feather="shopping-cart"></i>
+          <span
+            class="quantity-badge"
+            x-show="$store.cart.quantity"
+            x-text="$store.cart.quantity"
+          ></span>
+        </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
 
@@ -51,29 +65,63 @@
 
       <!-- shoping card start -->
       <div class="shopping-cart">
-        <div class="cart-item" id="cart-item">
-          <img src="img/crop/menu/cromboloni.jpg" alt="Cromboloni" />
-          <div class="item-detail">
-            <h3>Cromboloni</h3>
-            <div class="item-price">IDR 20.000</div>
+        <template x-for="(item, index) in $store.cart.items" x-keys="index">
+          <div class="cart-item" id="cart-item">
+            <img :src="`img/crop/product/${item.img}`" :alt="item.name" />
+            <div class="item-detail">
+              <h3 x-text="item.name"></h3>
+              <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button id="remove" @click="$store.cart.remove(item.id)">
+                  &minus;
+                </button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button>
+                &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>
+            </div>
           </div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-        <div class="cart-item">
-          <img src="img/crop/menu/Choco Banana nugget.jpg" alt="Banana Choco" />
-          <div class="item-detail">
-            <h3>Banana Choco</h3>
-            <div class="item-price">IDR 14.000</div>
-          </div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-        <div class="cart-item">
-          <img src="img/crop/menu/japanese roll.jpg" alt="japanese_roll" />
-          <div class="item-detail">
-            <h3>Japanese Roll</h3>
-            <div class="item-price">IDR 25.000</div>
-          </div>
-          <i data-feather="trash-2" class="remove-item"></i>
+        </template>
+        <h4 x-show="!$store.cart.items.length" style="margin: 1rem">
+          Cart is Empty
+        </h4>
+        <h4 x-show="$store.cart.items.length">
+          Total : <span x-text="rupiah($store.cart.total)"></span>
+        </h4>
+
+        <div class="form-container">
+          <form action="" id="checkoutForm" x-show="$store.cart.items.length">
+            <input
+              type="hidden"
+              name="items"
+              x-model="JSON.stringify($store.cart.items)"
+            />
+            <input type="hidden" name="total" x-model="$store.cart.total" />
+            <h5>Custumer Detail</h5>
+
+            <label for="name">
+              <span>Name</span>
+              <input type="text" name="name" id="name" />
+            </label>
+            <label for="email">
+              <span>Email</span>
+              <input type="email" name="email" id="email" />
+            </label>
+            <label for="phone">
+              <span>Phone</span>
+              <input type="number" name="phone" id="phone" autocomplete="off" />
+            </label>
+
+            <button
+              class="checkout-button disabled"
+              type="submit"
+              id="checkout-button"
+              value="checkout"
+            >
+              Checkout
+            </button>
+          </form>
         </div>
       </div>
       <!-- shoping card end-->
@@ -100,7 +148,7 @@
 
       <div class="row">
         <div class="about-img">
-          <img src="img/logo infinity-Recovered6.jpg" alt="Tentang Kami" />
+          <img src="img/logo batul.png" alt="Tentang Kami" />
         </div>
         <div class="content">
           <h3>Kenapa Memilih Restoran Kami?</h3>
@@ -136,43 +184,31 @@
         <div class="direc-card">
           <img
             src="img/crop/papzol.jpg"
-            alt="Papa Zola"
+            alt="Alfin Daud"
             class="direc-card-img"
           />
           <h3 class="direc-card-title">- CTO -</h3>
-          <p class="direc-card-price">Alfin Habsa Balubun</p>
+          <p class="direc-card-price">Alfin Daud</p>
         </div>
         <div class="direc-card">
-          <img
-            src="img/crop/mazil.jpg"
-            alt="Mama Zila"
-            class="direc-card-img"
-          />
+          <img src="img/crop/1.png" alt="Mama Zila" class="direc-card-img" />
           <h3 class="direc-card-title">- CEO -</h3>
-          <p class="direc-card-price">Indah Juliana Sia</p>
+          <p class="direc-card-price">Misna La Husen</p>
         </div>
         <div class="direc-card">
-          <img
-            src="img/crop/mama indah1.jpg"
-            alt="Papa Zola"
-            class="direc-card-img"
-          />
+          <img src="img/crop/8.png" alt="Papa Zola" class="direc-card-img" />
           <h3 class="direc-card-title">- PRODUCTION OFFICER -</h3>
-          <p class="direc-card-price">WA ITA</p>
+          <p class="direc-card-price">Rina La Ramid</p>
         </div>
         <div class="direc-card">
-          <img src="img/crop/ayana1.jpg" alt="ayana" class="direc-card-img" />
+          <img src="img/crop/7.png" alt="ayana" class="direc-card-img" />
           <h3 class="direc-card-title">- MARKETTING OFFICER -</h3>
-          <p class="direc-card-price">RIYANA A UMAR</p>
+          <p class="direc-card-price">Ajmiranti Rumaf</p>
         </div>
         <div class="direc-card">
-          <img
-            src="img/crop/ayana mama.jpg"
-            alt="Papa Zola"
-            class="direc-card-img"
-          />
+          <img src="img/crop/6.png" alt="Papa Zola" class="direc-card-img" />
           <h3 class="direc-card-title">- FINANCIAL OFFICER -</h3>
-          <p class="direc-card-price">MURNI SAMPULAWA</p>
+          <p class="direc-card-price">Yesti Angel Wattimena</p>
         </div>
       </div>
     </section>
@@ -297,265 +333,101 @@
     <!-- menu section end -->
 
     <!-- product section start -->
-    <section class="products" id="products">
+    <section class="products" id="products" x-data="products">
       <h2><span>Pesanan</span> Online</h2>
       <p>
         Kami Juga Membuka Pelayanan Online Jika Anda ingin memesan dari rumah.
-        Kebetulan kami baru membuka Restorankami,kami mengadakan diskon
+        Kebetulan kami baru membuka Restoran kami,kami mengadakan diskon
         besar-besaran
       </p>
 
       <div class="row">
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/cromboloni.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Cromboloni</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="product-card">
+            <div class="product-icon">
+              <a href="#" @click.prevent="$store.cart.add(item)">
+                <!-- <i data-feather="shopping-cart"></i> -->
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#shopping-cart" />
+                </svg>
+              </a>
             </div>
-            <div class="product-price">IDR 20.000 <span>IDR 25.000</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img
-              src="img/crop/menu/Choco Banana nugget.jpg"
-              alt="Banana Choco"
-            />
-          </div>
-          <div class="product-content">
-            <h3>Banana Choco</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
+            <div class="product-image">
+              <img :src="`img/crop/product/${item.img}`" :alt="item.name" />
             </div>
-            <div class="product-price">IDR 14.000 <span>IDR 20.000</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/japanese roll.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Japanese Roll</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 25.000 <span>IDR 28.000</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/es karamel.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Ice Caramel</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 25.000 <span>Discount</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/Hazelnut Choco.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Hazelnut Choco</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 25.000 <span>IDR 28.000</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img
-              src="img/crop/menu/Best Chocolate Cake Recipe _ My Baking Addiction.jpg"
-              alt="Cromboloni"
-            />
-          </div>
-          <div class="product-content">
-            <h3>Chocolate Cake</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-            </div>
-            <div class="product-price">IDR 22.000 <span>IDR 25.000</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img
-              src="img/crop/menu/Birthday Cake _ Purple Mirror Glaze Cake _ Entremet Cake Indonesia by Lincah Cakes.jpg"
-              alt="Cromboloni"
-            />
-          </div>
-          <div class="product-content">
-            <h3>Miror Glaze Cake</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-            </div>
-            <div class="product-price">
-              IDR 130.000 <span>IDR 150.000</span>
+            <div class="product-content">
+              <h3 x-text="item.name"></h3>
+              <div class="product-star">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+              </div>
+              <div class="product-price">
+                <span x-text="rupiah(item.price)"></span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/Korean cake.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Korean Cake</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">
-              IDR 110.000 <span>IDR 130.000</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img
-              src="img/crop/menu/classic mix signature cake.jpg"
-              alt="Cromboloni"
-            />
-          </div>
-          <div class="product-content">
-            <h3>Classic Mix Signature Cake</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">
-              IDR 250.000 <span>IDR 255.000</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/black forest.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Black Forest</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-            </div>
-            <div class="product-price">
-              IDR 150.000 <span>IDR 170.000</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/kids cake.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Kids Cake</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">
-              IDR 200.000 <span>IDR 250.000</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/crop/menu/Frappe.jpg" alt="Cromboloni" />
-          </div>
-          <div class="product-content">
-            <h3>Frappe</h3>
-            <div class="product-star">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 25.000 <span>IDR 28.000</span></div>
-          </div>
-        </div>
+        </template>
       </div>
     </section>
     <!-- product section end-->
