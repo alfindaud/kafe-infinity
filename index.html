@@ -8,10 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
 
     <!-- my icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -20,10 +17,10 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- AlpineJS -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Feather Icon -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
     <!-- App -->
     <script src="src/app.js" async></script>
@@ -47,11 +44,7 @@
         <a href="#" id="search-button"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart-button">
           <i data-feather="shopping-cart"></i>
-          <span
-            class="quantity-badge"
-            x-show="$store.cart.quantity"
-            x-text="$store.cart.quantity"
-          ></span>
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
         </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
@@ -72,9 +65,7 @@
               <h3 x-text="item.name"></h3>
               <div class="item-price">
                 <span x-text="rupiah(item.price)"></span> &times;
-                <button id="remove" @click="$store.cart.remove(item.id)">
-                  &minus;
-                </button>
+                <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
                 <span x-text="item.quantity"></span>
                 <button id="add" @click="$store.cart.add(item)">&plus;</button>
                 &equals;
@@ -83,20 +74,12 @@
             </div>
           </div>
         </template>
-        <h4 x-show="!$store.cart.items.length" style="margin: 1rem">
-          Cart is Empty
-        </h4>
-        <h4 x-show="$store.cart.items.length">
-          Total : <span x-text="rupiah($store.cart.total)"></span>
-        </h4>
+        <h4 x-show="!$store.cart.items.length" style="margin: 1rem">Cart is Empty</h4>
+        <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
 
         <div class="form-container">
           <form action="" id="checkoutForm" x-show="$store.cart.items.length">
-            <input
-              type="hidden"
-              name="items"
-              x-model="JSON.stringify($store.cart.items)"
-            />
+            <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)" />
             <input type="hidden" name="total" x-model="$store.cart.total" />
             <h5>Custumer Detail</h5>
 
@@ -113,14 +96,7 @@
               <input type="number" name="phone" id="phone" autocomplete="off" />
             </label>
 
-            <button
-              class="checkout-button disabled"
-              type="submit"
-              id="checkout-button"
-              value="checkout"
-            >
-              Checkout
-            </button>
+            <button class="checkout-button disabled" type="submit" id="checkout-button" value="checkout">Checkout</button>
           </form>
         </div>
       </div>
@@ -132,10 +108,7 @@
     <section class="hero" id="home">
       <main class="content">
         <h1>Mari Nikmati Cake And <span>Bakery</span></h1>
-        <p>
-          Menyajikan kue dan produk roti berkualitas tinggi dengan bahan
-          terbaik.
-        </p>
+        <p>Menyajikan kue dan produk roti berkualitas tinggi dengan bahan terbaik.</p>
         <a href="#about" class="cta">Tentang Kami</a>
       </main>
     </section>
@@ -153,19 +126,10 @@
         <div class="content">
           <h3>Kenapa Memilih Restoran Kami?</h3>
           <p>
-            Restoran kami menyajikan kue dan produk roti yang berkualitas tinggi
-            dengan bahan terbaik. Menciptakan variasi menu yang tak terbatas,
-            menggoda selera pelanggan. Menyediakan layanan pelanggan yang luar
-            biasa dan ramah. Mengutamakan keberlanjutan dengan praktik bisnis
-            yang bertanggung jawab terhadap lingkungan. Menjadi pusat inovasi
-            dalam dunia kue dan roti, terus menghadirkan kreasi baru.
+            Restoran kami menyajikan kue dan produk roti yang berkualitas tinggi dengan bahan terbaik. Menciptakan variasi menu yang tak terbatas, menggoda selera pelanggan. Menyediakan layanan pelanggan yang luar biasa dan ramah.
+            Mengutamakan keberlanjutan dengan praktik bisnis yang bertanggung jawab terhadap lingkungan. Menjadi pusat inovasi dalam dunia kue dan roti, terus menghadirkan kreasi baru.
           </p>
-          <p>
-            Visi kami yaitu “Menjadikan “cake & bakery INFINITY ” Menjadi
-            destinasi utama bagi pecinta kue dan toko roti, menghadirkan
-            pengalaman tak terbatas melalui inovasi, kualitas terbaik, dan
-            kreativitas tanpa batas”.
-          </p>
+          <p>Visi kami yaitu “Menjadikan “cake & bakery INFINITY ” Menjadi destinasi utama bagi pecinta kue dan toko roti, menghadirkan pengalaman tak terbatas melalui inovasi, kualitas terbaik, dan kreativitas tanpa batas”.</p>
         </div>
       </div>
     </section>
@@ -175,40 +139,43 @@
     <!-- diretur start -->
     <section id="direc" class="direc">
       <h2>Meet Our <span>Team</span></h2>
-      <p>
-        Disini Kami Memiliki Beberapa Pengurus Restoran Yang Sangat Berjasa Bagi
-        Keberhasilan Restoran Kami
-      </p>
+      <p>Disini Kami Memiliki Beberapa Pengurus Restoran Yang Sangat Berjasa Bagi Keberhasilan Restoran Kami</p>
 
       <div class="row">
         <div class="direc-card">
-          <img
-            src="img/crop/papzol.jpg"
-            alt="Alfin Daud"
-            class="direc-card-img"
-          />
+          <img src="img/crop/apin.jpg" alt="Alfin Daud" class="direc-card-img" />
           <h3 class="direc-card-title">- CTO -</h3>
           <p class="direc-card-price">Alfin Daud</p>
         </div>
         <div class="direc-card">
-          <img src="img/crop/1.png" alt="Mama Zila" class="direc-card-img" />
+          <img src="img/crop/dito.jpg" alt="Dito" class="direc-card-img" />
           <h3 class="direc-card-title">- CEO -</h3>
-          <p class="direc-card-price">Misna La Husen</p>
+          <p class="direc-card-price">Dito Wahyu Pratama</p>
         </div>
         <div class="direc-card">
-          <img src="img/crop/8.png" alt="Papa Zola" class="direc-card-img" />
+          <img src="img/crop/iki.jpg" alt="Rizki" class="direc-card-img" />
           <h3 class="direc-card-title">- PRODUCTION OFFICER -</h3>
-          <p class="direc-card-price">Rina La Ramid</p>
+          <p class="direc-card-price">Rizky Dwi Susanto</p>
         </div>
         <div class="direc-card">
-          <img src="img/crop/7.png" alt="ayana" class="direc-card-img" />
+          <img src="img/crop/amrin.jpg" alt="amrin" class="direc-card-img" />
           <h3 class="direc-card-title">- MARKETTING OFFICER -</h3>
-          <p class="direc-card-price">Ajmiranti Rumaf</p>
+          <p class="direc-card-price">Muhamad Amri Angkotasan</p>
         </div>
         <div class="direc-card">
-          <img src="img/crop/6.png" alt="Papa Zola" class="direc-card-img" />
+          <img src="img/crop/olive.jpg" alt="olive" class="direc-card-img" />
           <h3 class="direc-card-title">- FINANCIAL OFFICER -</h3>
-          <p class="direc-card-price">Yesti Angel Wattimena</p>
+          <p class="direc-card-price">Olive Framitha Risteruw</p>
+        </div>
+        <div class="direc-card">
+          <img src="img/crop/intan.jpg" alt="olive" class="direc-card-img" />
+          <h3 class="direc-card-title">- KOKI 1 -</h3>
+          <p class="direc-card-price">Intan Dewiasari Kaimudin</p>
+        </div>
+        <div class="direc-card">
+          <img src="img/crop/haider.jpg" alt="olive" class="direc-card-img" />
+          <h3 class="direc-card-title">- KOKI 2 -</h3>
+          <p class="direc-card-price">Haider Muhammad Iqbal</p>
         </div>
       </div>
     </section>
@@ -221,110 +188,62 @@
 
       <div class="row">
         <div class="menu-card">
-          <img
-            src="img/crop/menu/cromboloni.jpg"
-            alt="cromboloni"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/cromboloni.jpg" alt="cromboloni" class="menu-card-img" />
           <h3 class="menu-card-title">- Cromboloni -</h3>
           <p class="menu-card-price">IDR 20.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/Choco Banana nugget.jpg"
-            alt="banana_choco"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/Choco Banana nugget.jpg" alt="banana_choco" class="menu-card-img" />
           <h3 class="menu-card-title">- Banana Choco -</h3>
           <p class="menu-card-price">IDR 14.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/japanese roll.jpg"
-            alt="japanese_roll"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/japanese roll.jpg" alt="japanese_roll" class="menu-card-img" />
           <h3 class="menu-card-title">- Japanese Roll -</h3>
           <p class="menu-card-price">IDR 25.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/es karamel.jpg"
-            alt="Ice Caramel"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/es karamel.jpg" alt="Ice Caramel" class="menu-card-img" />
           <h3 class="menu-card-title">- Ice Caramel -</h3>
           <p class="menu-card-price">IDR 25.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/Hazelnut Choco.jpg"
-            alt="Hazelnut Choco"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/Hazelnut Choco.jpg" alt="Hazelnut Choco" class="menu-card-img" />
           <h3 class="menu-card-title">- Hazelnut Choco -</h3>
           <p class="menu-card-price">IDR 25.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/Best Chocolate Cake Recipe _ My Baking Addiction.jpg"
-            alt="Chocolate Cake"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/Best Chocolate Cake Recipe _ My Baking Addiction.jpg" alt="Chocolate Cake" class="menu-card-img" />
           <h3 class="menu-card-title">- Chocolate Cake -</h3>
           <p class="menu-card-price">IDR 22.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/Birthday Cake _ Purple Mirror Glaze Cake _ Entremet Cake Indonesia by Lincah Cakes.jpg"
-            alt="Birthday Cake"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/Birthday Cake _ Purple Mirror Glaze Cake _ Entremet Cake Indonesia by Lincah Cakes.jpg" alt="Birthday Cake" class="menu-card-img" />
           <h3 class="menu-card-title">- Miror Glaze Cake -</h3>
           <p class="menu-card-price">IDR 130.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/Korean cake.jpg"
-            alt="Korean Cake"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/Korean cake.jpg" alt="Korean Cake" class="menu-card-img" />
           <h3 class="menu-card-title">- Korean Cake -</h3>
           <p class="menu-card-price">IDR 110.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/classic mix signature cake.jpg"
-            alt="classic mix signature cake"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/classic mix signature cake.jpg" alt="classic mix signature cake" class="menu-card-img" />
           <h3 class="menu-card-title">- Classic Mix Signature Cake -</h3>
           <p class="menu-card-price">IDR 250.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/black forest.jpg"
-            alt="black forest"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/black forest.jpg" alt="black forest" class="menu-card-img" />
           <h3 class="menu-card-title">- Black Forest -</h3>
           <p class="menu-card-price">IDR 150.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/kids cake.jpg"
-            alt="kids cake"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/kids cake.jpg" alt="kids cake" class="menu-card-img" />
           <h3 class="menu-card-title">- Kids Cake -</h3>
           <p class="menu-card-price">IDR 200.000</p>
         </div>
         <div class="menu-card">
-          <img
-            src="img/crop/menu/Frappe.jpg"
-            alt="Frappe"
-            class="menu-card-img"
-          />
+          <img src="img/crop/menu/Frappe.jpg" alt="Frappe" class="menu-card-img" />
           <h3 class="menu-card-title">- Frappe -</h3>
           <p class="menu-card-price">IDR 25.000</p>
         </div>
@@ -335,29 +254,17 @@
     <!-- product section start -->
     <section class="products" id="products" x-data="products">
       <h2><span>Pesanan</span> Online</h2>
-      <p>
-        Kami Juga Membuka Pelayanan Online Jika Anda ingin memesan dari rumah.
-        Kebetulan kami baru membuka Restoran kami,kami mengadakan diskon
-        besar-besaran
-      </p>
+      <p>Kami Juga Membuka Pelayanan Online Jika Anda ingin memesan dari rumah. Kebetulan kami baru membuka Restoran kami,kami mengadakan diskon besar-besaran</p>
 
       <div class="row">
         <template x-for="(item, index) in items" x-key="index">
           <div class="product-card">
             <div class="product-icon">
               <a href="#" @click.prevent="$store.cart.add(item)">
-                <!-- <i data-feather="shopping-cart"></i> -->
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <i data-feather="shopping-cart"></i>
+                <!-- <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#shopping-cart" />
-                </svg>
+                </svg> -->
               </a>
             </div>
             <div class="product-image">
@@ -366,59 +273,19 @@
             <div class="product-content">
               <h3 x-text="item.name"></h3>
               <div class="product-star">
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
               </div>
@@ -436,10 +303,8 @@
     <section id="contact" class="contact">
       <h2><span>Kontak</span> Kami</h2>
       <p>
-        Kami Membuka Restoran ini tepat di dalam Maluku City Mall (MCM) lantai 3
-        kalau mau tau selengkapnya silahkan kunjungi instagram kami yaitu
-        <a href="#" class="ig">@infinity_cake_and_bakery</a> atau bisa lewat via
-        wa : 081294348808
+        Kami Membuka Restoran ini tepat di dalam Maluku City Mall (MCM) lantai 3 kalau mau tau selengkapnya silahkan kunjungi instagram kami yaitu
+        <a href="#" class="ig">@infinity_cake_and_bakery</a> atau bisa lewat via wa : 081294348808
       </p>
 
       <div class="row">

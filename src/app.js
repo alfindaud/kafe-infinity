@@ -121,3 +121,7 @@ const rupiah = (number) => {
     minimumFractionDigits: 0,
   }).format(number);
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  feather.replace(); // Ini yang mengubah <i data-feather="..."> jadi SVG
+});
